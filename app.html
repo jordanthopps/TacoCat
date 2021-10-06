@@ -2,7 +2,7 @@
 <html lang="en" class="h-100">
 
 <head>
-    <title>APP NAME: Coding Challenge by Jordan Hopps</title>
+    <title>TacoCat: Coding Challenge by Jordan Hopps</title>
     <!-- Required meta tags-->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -27,7 +27,7 @@
         <div class="container-fluid">
             <!--Change the app name when it's cloned. In the img tag, add your logo. Also, set the height and with of the favicon (it's trial and error)
             call width= and height= within the img tag. Try around 24 tall and 30 width and adjust from there; to align, class="d-inline-block (read about this) align-text-top"-->
-            <a class="navbar-brand" href="/index.html"><img src="">APP Name</a> <button class="navbar-toggler"
+            <a class="navbar-brand" href="/index.html"><img src="">TacoCat</a> <button class="navbar-toggler"
                 type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -61,7 +61,7 @@
         <div class="container col-xxl-8 px-4 py-5 mt-5">
             <div class="row row-cols-1">
                 <div class="col col-md-6">
-                    <h1>Tacocat: A Coding Project</h1>
+                    <h1>TacoCat: A Coding Project</h1>
                     <p>This application reverses the input and detects whether or not the entry is a palindrome.</p>
                 </div>
                 <div class="col col-md-6">
@@ -69,21 +69,21 @@
                     <form class="row gx-3 gy-2">
                         <div class="col-12">
                             <label class="form-label">Enter a string</label>
-                            <input type="text" class="form-control" id="userString" placeholder="tacocat" required>
+                            <input type="text" class="form-control" id="userString" placeholder="tacocat"
+                                onkeyup="lettersOnly(this)" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Results</label>
                             <textarea class="form-control" id="Results" rows="3" placeholder="tacocat"></textarea>
                         </div>
+
+                        <div class="col-12">
+                            <button type="button" id="btnSubmit" class="btn btn-danger">Reverse</button>
+                        </div>
+                    </form>
+                    <hr />
                 </div>
-                <div class="col-12">
-                    <button type="button" id="btnSubmit" class="btn btn-danger">Reverse</button>
-                </div>
-                </form>
-                <hr />
-                <p id="results"></p>
             </div>
-        </div>
         </div>
     </main>
     <!--End of Main Section-->
@@ -105,7 +105,6 @@
                         <div class="col social"><a href="#"><i class="fab fa-linkedin fa-2x"></i></a></div>
                         <div class="col social"><a href="#"><i class="fab fa-github fa-2x"></i></a></div>
                         <div class="col social"><a href="#"><i class="fab fa-twitter fa-2x"></i></a></div>
-                        <div class="col social"><a href="#"><i class="fab fa-youtube fa-2x"></i></a></div>
                     </div>
                 </div>
             </div>
@@ -118,6 +117,12 @@
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <!--Site JS Link-->
     <script src="js/site.js"></script>
+    <script>
+        function lettersOnly(input) {
+            let regex = /[^a-z]/gi;
+            input.value = input.value.replace(regex, "");
+        }
+    </script>
     <script>
         document.getElementById("btnSubmit").addEventListener("click", getUserString);
     </script>

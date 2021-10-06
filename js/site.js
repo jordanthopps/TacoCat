@@ -39,21 +39,19 @@ function compareStrings(userString, revString) {
     //RegEx is used for this - Google is your friend (regular expression. use a generator)
 
     let normalUserString = userString.toLowerCase();
-    let normalRevString = revString.toLowercase();
+    let normalRevString = revString.toLowerCase();
 
-    let returnedUserIn = "You entered " + userString;
-    let returnedRevString = "The reverse " + revString;
-    let Winner = "That's a palindrome!";
-    let Loser = "Great effort - try again!";
+    let palindrome = "";
 
-    if (normalUserString === normalRevString) {
-        return palindrome = returnedUserIn, returnedRevString, Winner;
-    } else if (normalUserString !== normalRevString) {
-        return palindrome = returnedUserIn, returnedRevString, Loser;
+    if (normalUserString !== normalRevString) {
+        return palindrome = "You entered " + userString + "." + " The reverse is: " + revString + ". Great effort - try again!";
+    } else {
+        return palindrome = "You entered " + userString + "." + " The reverse is: " + revString + ". That's a palindrome!";
     }
+
 };
 
-function displaydata(palindrome) {
+function displayData(palindrome) {
     //We want to output three things
     //1. The original input
     //2. The reversed input
