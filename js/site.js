@@ -38,8 +38,8 @@ function compareStrings(userString, revString) {
     //Extra credit - "A man, a plan, a canal; Panama" - is a palindrome when the spaces and special character are removed
     //RegEx is used for this - Google is your friend (regular expression. use a generator)
 
-    let normalUserString = userString.toLowerCase();
-    let normalRevString = revString.toLowerCase();
+    let normalUserString = userString.toLowerCase().replace(/[^A-Z0-9]/ig, "");
+    let normalRevString = revString.toLowerCase().replace(/[^A-Z0-9]/ig, "");
 
     let palindrome = "";
 
